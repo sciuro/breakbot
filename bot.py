@@ -133,13 +133,13 @@ class Bot(threading.Thread):
                     error("Channel %s not recognized" %(message.chan))
 
 import json
-with open("config.json", "r") as f:
+with open("../conf/breakbot.json", "r") as f:
     config = json.loads(f.read())
 contacts = config["contacts"]
 cfg = config["config"]
 
 info("Contact list: %s" %contacts)
-with open("config.json.bak", "w") as f:
+with open("../conf/breakbot.json.bak", "w") as f:
     json.dump(config, f, indent=4)
 
 info("Program started")
